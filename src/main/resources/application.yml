@@ -1,0 +1,41 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${eurekahost}
+
+#zuul:
+#  prefix: /api
+#  ignoredServices: '*'
+#  routes:
+#    randomclient: /**
+
+#zuul:
+#  prefix: /api
+#  ignoredServices: '*'
+#  routes:
+#    random:
+#      path: /**
+#      serviceId: randomclient
+
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    random:
+      path: /**
+      url: http://sprandomclient.herokuapp.com/
+
+#  ribbon:
+#    eager-load:
+#      enabled: true
+#
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 60000
+#ribbon:
+#  ConnectTimeout: 3000
+#  ReadTimeout: 60000
